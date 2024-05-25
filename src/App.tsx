@@ -20,15 +20,16 @@ import logo from './logo.svg';
 import './App.css';
 import {NavBar} from "./view/NavBar/NavBar"
 import {findAllByDisplayValue} from "@testing-library/react";
+import {MainContent} from "./view/MainContent/MainContent";
+import {Footer} from "./view/Footer/Footer";
 
 function App() {
     return (
         <div>
-            <NavBar></NavBar>
-
+            <NavBar/>
+            <MainContent/>
+            <Footer/>
         </div>
-
-
 
     );
 }
