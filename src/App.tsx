@@ -18,17 +18,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {NavBar} from "./view/NavBar/NavBar"
+import {NavBar} from "./view/common/NavBar/NavBar"
 import {findAllByDisplayValue} from "@testing-library/react";
-import {MainContent} from "./view/MainContent/MainContent";
-import {Footer} from "./view/Footer/Footer";
+import {MainContent} from "./view/common/MainContent/MainContent";
+import {Footer} from "./view/common/Footer/Footer";
+import {BrowserRouter} from "react-router-dom";
+import {Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
+
+import {Login} from "./view/pages/Login/Login";
+import {DefaultLayout} from "./view/common/DefaultContent/DefaultLayout";
+
+
 
 function App() {
     return (
         <div>
-            <NavBar/>
-            <MainContent/>
-            <Footer/>
+            <BrowserRouter>
+               <Routes>
+                    <Route path="/*"
+                           Component={DefaultLayout}>
+                    </Route>
+                    <Route path="/login"
+                           Component={Login}>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </div>
 
     );

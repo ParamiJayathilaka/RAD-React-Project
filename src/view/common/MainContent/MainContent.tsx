@@ -1,8 +1,29 @@
 import {Component} from "react";
+import {Route, Routes} from "react-router-dom";
+import {Home} from "../../pages/Home/Home";
+import {About} from "../../pages/About/About";
+import {Contact} from "../../pages/Contact/Contact";
 
 export class MainContent extends Component{
     render() {
         return (
+
+            <div className={"pt-28 pb-28 "}>
+                <Routes>
+                    <Route path={"/"} Component={Home}></Route>
+                    <Route path={"/about"} Component={About}></Route>
+                    <Route path={"/contact"} Component={Contact}></Route>
+                </Routes>
+            </div>
+
+
+
+        )
+    }
+}
+
+
+
 //eg 1//
             // <div className={"md:px12 p-4 mx-auto pt-28 pb-28 bg-amber-100 bg-gradient-to-br  from-green-300 via-blue-100 to-yellow-400"}>
             //     <h1 className={"text-1xl text-secondary text-center"}>This is Main Content</h1>
@@ -57,10 +78,8 @@ export class MainContent extends Component{
         //     <div className={"h-20 max-w-screen-xl bg-yellow-300 text-center p-1 rotate-12 shadow-lg hover:shadow-red-500 cursor-pointer mx-auto"}>Height<br/>&<br/>Width</div>
         // </div>
 
-        <div className={"md:px-12 max-2xl mx-auto bg-[#0C3610FF] pt-28 pb-28"}>
-            <h1 className={"text-tertiary text-center"}> This Is Main Content</h1>
-        </div>
+        // <div className={"md:px-12 max-2xl mx-auto bg-[#0C3610FF] pt-28 pb-28"}>
+        //     <h1 className={"text-tertiary text-center"}> This Is Main Content</h1>
+        // </div>
 
-        )
-    }
-}
+
