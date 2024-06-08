@@ -1,10 +1,25 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import spinash from "../../../images/products/spinach.png";
+import ModifyCart from "../ModifyCart/ModifyCart";
 
 interface ProductProps {
     data: any;
 }
-export class Product extends Component<ProductProps> {
+
+interface  ProductState {
+    isActive: boolean
+
+}
+
+export class Product extends Component<ProductProps , ProductState> {
+
+    constructor(props: ProductProps) {
+        super(props);
+        this.state = {
+            isActive: false
+        }
+    }
+
     render() {
 
         const {data} = this.props;
@@ -24,11 +39,26 @@ export class Product extends Component<ProductProps> {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <button className="w-full mt-1 p-[2.4px] bg-secondary text-[8px] border-gray-500 border-[0.5px]">Add
-                        to Cart
-                    </button>
+                    {
+                        this.state.isActive ?
+                            <ModifyCart/> :
+
+                        <button className="w-full mt-1 p-[2.4px] bg-secondary text-[8px] border-gray-500 border-[0.5px]"
+                                onClick={this.addToCartOnClick}>Add to Cart</button>
+                    }
                 </div>
             </div>
         );
     }
+
+    private addToCartOnClick = ():void =>{
+        this.setState({
+            isActive:true
+        },
+            () =>{
+            alert(this.state.isActive);
+            });
+
+    }
+
 }
