@@ -28,6 +28,8 @@ export class NavBar extends Component {
                         <Link to="/about">About</Link></li>
                     <li className="inline-block mr-2 text-[#e6f0e6] cursor-pointer hover:text-green-400">
                         <Link to="/contact">Contact</Link></li>
+                    <li className="inline-block mr-2 text-[#e6f0e6] cursor-pointer hover:text-green-400">
+                        <Link to="/shopping-cart">My-Cart</Link></li>
                 </ul>
 
                 <button className="text-[8px]
